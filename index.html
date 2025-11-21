@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Alteraciones Geneticas, Alejandro y David</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteraciones Genéticas - Guía Completa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #34495e;
+            --success-color: #2ecc71;
+            --warning-color: #f39c12;
+            --purple-color: #9b59b6;
+            --teal-color: #1abc9c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e3e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color), var(--purple-color));
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(46, 204, 113, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(155, 89, 182, 0.1) 0%, transparent 50%);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .classification-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .classification-intro::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--teal-color), var(--purple-color));
+        }
+        
+        .main-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .category-card {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--teal-color));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        
+        .card-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-body {
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .subcategory {
+            margin-bottom: 2.5rem;
+            padding-left: 0;
+            position: relative;
+        }
+        
+        .subcategory h3 {
+            color: var(--primary-color);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            border-bottom: 2px solid var(--light-color);
+            position: relative;
+        }
+        
+        .subcategory h3::after {
+            content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .subcategory h3 i {
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+        }
+        
+        .item-list {
+            list-style-type: none;
+        }
+        
+        .item-list li {
+            margin-bottom: 0.8rem;
+            transition: all 0.3s;
+        }
+        
+        .highlight {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .expandable {
+            cursor: pointer;
+            position: relative;
+            padding: 1.2rem 1rem 1.2rem 3.5rem;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        
+        .expandable:hover {
+            background: rgba(52, 152, 219, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .expandable::before {
+            content: '\f055';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 1.2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--success-color);
+            transition: all 0.3s;
+            font-size: 1.3rem;
+            background: rgba(46, 204, 113, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .expanded::before {
+            content: '\f056';
+            transform: translateY(-50%) rotate(180deg);
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-color);
+        }
+        
+        .expandable-title {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.15rem;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        
+        .details {
+            display: none;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--secondary-color);
+            animation: fadeIn 0.5s ease;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .video-section, .image-gallery {
+            margin: 4rem 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--teal-color));
+            border-radius: 3px;
+        }
+        
+        .video-container, .gallery-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .video-card, .gallery-item {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .video-card:hover, .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info, .gallery-info {
+            padding: 1.5rem;
+        }
+        
+        .video-info h3, .gallery-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .search-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .search-box {
+            padding: 1rem 1.8rem;
+            width: 100%;
+            max-width: 500px;
+            border: 2px solid var(--secondary-color);
+            border-radius: 50px;
+            font-size: 1.1rem;
+            outline: none;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.1);
+        }
+        
+        .search-box:focus {
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+            background: white;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .counter {
+            background: linear-gradient(135deg, var(--primary-color), var(--purple-color));
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, var(--accent-color), #c0392b);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dna-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,5 L60,35 L90,35 L65,55 L75,85 L50,65 L25,85 L35,55 L10,35 L40,35 Z" fill="%23000"/></svg>');
+            background-size: 100px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-categories {
+                flex-direction: column;
+            }
+            
+            .category-card {
+                min-width: 100%;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .video-container, .gallery-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .floating-btn {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .expandable {
+                padding: 1rem 1rem 1rem 3rem;
+            }
+            
+            .expandable::before {
+                left: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dna-animation"></div>
+    
+    <header>
+        <h1><i class="fas fa-dna"></i> Alteraciones Genéticas</h1>
+        <p class="subtitle">Una guía completa sobre las diferentes alteraciones genéticas, sus características, síntomas y tratamientos. Autores: Alejandro Cuellar y David Zaragoza</p>
+    </header>
+    
+    <div class="container">
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Buscar alteración genética...">
+        </div>
+        
+        <section class="classification-intro">
+            <h2>Clasificación de las Alteraciones Genéticas</h2>
+            <p>Las alteraciones genéticas pueden clasificarse en dos grandes grupos según su naturaleza y extensión. A continuación se presenta una descripción detallada de cada tipo con información sobre síntomas, tratamientos y consecuencias.</p>
+            <div class="counter">23 Alteraciones Descritas</div>
+        </section>
+        
+        <div class="main-categories">
+            <!-- CROMOSÓMICAS -->
+            <div class="category-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-chart-bar"></i> ALTERACIONES CROMOSÓMICAS</h2>
+                    <p>Alteraciones que afectan a la estructura o al número de cromosomas completos</p>
+                </div>
+                <div class="card-body">
+                    <div class="subcategory">
+                        <h3><i class="fas fa-sort-numeric-up"></i> Alteraciones Numéricas</h3>
+                        <ul class="item-list">
+                            <li class="expandable">
+                                <span class="expandable-title">Polipíoldas</span>
+                                <div class="details">
+                                    <p><span class="highlight">Triploidía:</span> Presencia de tres juegos completos de cromosomas (69 cromosomas).</p>
+                                    <p><span class="highlight">Definición:</span> Alteración cromosómica en la que el individuo posee tres juegos completos de cromosomas (69 en total en lugar de 46).</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Todos los genes del genoma humano.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Signos y síntomas:</span> Malformaciones graves, retraso en el crecimiento y muerte fetal o neonatal.</p>
+                                    <p><span class="highlight">Cura o control:</span> No tiene cura; incompatible con la vida en la mayoría de los casos.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Aborto espontáneo, pérdida fetal.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Atención médica durante el embarazo.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH Genetics Home Reference (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://es.wikipedia.org/wiki/S%C3%ADndrome_triploide</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Aneuploidías</span>
+                                <div class="details">
+                                    <p><span class="highlight">Trisomías:</span> Presencia de un cromosoma extra (3 copias en lugar de 2).</p>
+                                    <p><span class="highlight">Definición:</span> Existencia de un cromosoma adicional en un par (47 cromosomas).</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes del cromosoma afectado (ej. 21, 18, 13).</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Ejemplo y síntomas:</span> Síndrome de Down (trisomía 21): discapacidad intelectual, rasgos faciales característicos.</p>
+                                    <p><span class="highlight">Cura:</span> No tiene; se controla con terapias.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Retraso mental, integración social.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapia física, lenguaje, estimulación temprana.</p>
+                                    <p><span class="highlight">Referencia:</span> WHO, Genet Med (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-genetica/def/trisomia</p>
+                                    <p><span class="highlight">Monosomías:</span> Ausencia de un cromosoma (1 copia en lugar de 2).</p>
+                                    <p><span class="highlight">Definición:</span> Falta un cromosoma en un par (45 cromosomas).</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes del cromosoma ausente.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos (ej. monosomía X solo mujeres).</p>
+                                    <p><span class="highlight">Ejemplo:</span> Síndrome de Turner (45,X).</p>
+                                    <p><span class="highlight">Síntomas:</span> Baja estatura, infertilidad, problemas cardíacos.</p>
+                                    <p><span class="highlight">Cura:</span> Incurable, pero tratable con hormonas.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Infertilidad, baja autoestima.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapia hormonal y médica.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH, Medscape (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.genome.gov/es/genetics-glossary/Monosomia</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="subcategory">
+                        <h3><i class="fas fa-project-diagram"></i> Alteraciones Estructurales</h3>
+                        <ul class="item-list">
+                            <li class="expandable">
+                                <span class="expandable-title">Translocaciones</span>
+                                <div class="details">
+                                    <p>Intercambio de material genético entre cromosomas no homólogos.</p>
+                                    <p><span class="highlight">Definición:</span> Intercambio de fragmentos entre cromosomas distintos.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes ubicados en los puntos de ruptura.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Síntomas:</span> Dependen del tipo; pueden causar infertilidad o cáncer.</p>
+                                    <p><span class="highlight">Cura:</span> No; se monitorea.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Riesgo genético en descendencia.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Consejería genética.</p>
+                                    <p><span class="highlight">Referencia:</span> Genomics England (2024).</p>
+                                    <p><span class="hoghlight">Link para mas informacion:</span> https://medlineplus.gov/spanish/ency/article/002330.htm#:~:text=Es%20un%20cambio%20de%20localizaci%C3%B3n,unidades%20de%20nuestra%20informaci%C3%B3n%20hereditaria.</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Inversiones</span>
+                                <div class="details">
+                                    <p>Segmento cromosómico que se ha invertido 180 grados.</p>
+                                    <p><span class="highlight">Definición:</span> Segmento del cromosoma se rompe y se reinserta invertido.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes en la región afectada.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Síntomas:</span> Generalmente sin síntomas; puede afectar fertilidad.</p>
+                                    <p><span class="highlight">Cura:</span> No requiere tratamiento.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Riesgo en descendencia.</p>
+                                    <p><span class="highlight">Referencia:</span> NCBI (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://courses-lumenlearning-com.translate.goog/wm-biology1/chapter/reading-chromosomal-structural-rearrangements-2/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Deleciones</span>
+                                <div class="details">
+                                    <p>Pérdida de un segmento cromosómico.</p>
+                                    <p><span class="highlight">Definición:</span> Pérdida de un fragmento de ADN o cromosoma.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes perdidos en el segmento.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Síndrome Cri du Chat.</p>
+                                    <p><span class="highlight">Síntomas:</span> Llanto parecido a maullido, retraso mental, microcefalia.</p>
+                                    <p><span class="highlight">Cura:</span> No curable.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias de apoyo.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-genetica/def/delecion</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Inserciones</span>
+                                <div class="details">
+                                    <p>Adición de material genético de otro cromosoma.</p>
+                                    <p><span class="highlight">Definición:</span> Adición de fragmentos de ADN dentro de un cromosoma.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes del sitio de inserción.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Síntomas:</span> Varian; pueden causar enfermedades genéticas.</p>
+                                    <p><span class="highlight">Cura:</span> No curable.</p>
+                                    <p><span class="highlight">Consecuencias:</span> Alteraciones del desarrollo.</p>
+                                    <p><span class="highlight">Referencia:</span> MedlinePlus (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.genome.gov/es/genetics-glossary/Insercion</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Duplicaciones</span>
+                                <div class="details">
+                                    <p>Presencia de un segmento cromosómico duplicado.</p>
+                                    <p><span class="highlight">Definición:</span> Repetición de una región cromosómica.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes duplicados.</p>
+                                    <p><span class="highlight">Síntomas:</span> Retraso mental, crecimiento anormal.</p>
+                                    <p><span class="highlight">Cura:</span> No tiene cura.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias de rehabilitación.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span>https://www.genome.gov/es/genetics-glossary/Duplicacion</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Cromosomas en anillo</span>
+                                <div class="details">
+                                    <p>Cromosoma cuyos extremos se han unido formando una estructura circular.</p>
+                                    <p><span class="highlight">Definición:</span> Cromosoma que se cierra formando un anillo por pérdida de extremos.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Genes terminales del cromosoma.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Cromosoma en anillo 14.</p>
+                                    <p><span class="highlight">Síntomas:</span> Epilepsia, retraso mental.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Médico y de apoyo.</p>
+                                    <p><span class="highlight">Referencia:</span> NCBI (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.biocaremexico.com/post/fundamentos-de-biocare-cromosomas-anulares</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Cromosomas marcadores</span>
+                                <div class="details">
+                                    <p>Cromosoma pequeño adicional de origen desconocido.</p>
+                                    <p><span class="highlight">Definición:</span> Fragmentos cromosómicos adicionales de origen desconocido.</p>
+                                    <p><span class="highlight">Genes involucrados:</span> Variable.</p>
+                                    <p><span class="highlight">Síntomas:</span> Retraso mental, malformaciones.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias de apoyo.</p>
+                                    <p><span class="highlight">Referencia:</span> Genet Med (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www-sciencedirect-com.translate.goog/topics/biochemistry-genetics-and-molecular-biology/chromosome-marker?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=tc</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Isocromosomas</span>
+                                <div class="details">
+                                    <p>Cromosoma con dos brazos idénticos, ya sea ambos p o ambos q.</p>
+                                    <p><span class="highlight">Definición:</span> Cromosoma con brazos idénticos (duplicación de un brazo y pérdida del otro).</p>
+                                    <p><span class="highlight">Ejemplo:</span> Isocromosoma Xq.</p>
+                                    <p><span class="highlight">Síntomas:</span> Infertilidad, problemas endocrinos.</p>
+                                    <p><span class="highlight">Cura:</span> No curable.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapia hormonal.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.institutoroche.es/recursos/glosario/isocromosoma</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- MONOGÉNICAS -->
+            <div class="category-card">
+                <div class="card-header">
+                    <h2><i class="fas fa-gene"></i> ALTERACIONES MONOGÉNICAS</h2>
+                    <p>Alteraciones que afectan a un solo gen, siguiendo patrones de herencia específicos</p>
+                </div>
+                <div class="card-body">
+                    <div class="subcategory">
+                        <h3><i class="fas fa-sitemap"></i> Herencia Mendeliana</h3>
+                        <ul class="item-list">
+                            <li class="expandable">
+                                <span class="expandable-title">Autosómica dominante</span>
+                                <div class="details">
+                                    <p>El gen alterado se encuentra en un autosoma y una sola copia es suficiente para expresar la enfermedad.</p>
+                                    <p><span class="highlight">Definición:</span> Mutación en un gen de un cromosoma no sexual que se expresa aunque solo uno esté alterado.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Acondroplasia.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos.</p>
+                                    <p><span class="highlight">Síntomas:</span> Baja estatura, cabeza grande.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Médico y psicológico.</p>
+                                    <p><span class="highlight">Referencia:</span> MedlinePlus (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/herencia-autosomica-dominante</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Autosómica recesiva</span>
+                                <div class="details">
+                                    <p>El gen alterado se encuentra en un autosoma y se necesitan dos copias para expresar la enfermedad.</p>
+                                    <p><span class="highlight">Definición:</span> Se manifiesta solo si ambos alelos del gen están mutados.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Fibrosis quística.</p>
+                                    <p><span class="highlight">Síntomas:</span> Tos crónica, infecciones pulmonares.</p>
+                                    <p><span class="highlight">Cura:</span> No; se controla.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Fisioterapia, antibióticos.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/herencia-autosomica-recesiva</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Recesiva ligada a X</span>
+                                <div class="details">
+                                    <p>El gen alterado se encuentra en el cromosoma X y afecta principalmente a varones.</p>
+                                    <p><span class="highlight">Definición:</span> Mutación en un gen del cromosoma X que se manifiesta más en hombres.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Hemofilia A.</p>
+                                    <p><span class="highlight">Síntomas:</span> Hemorragias prolongadas.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Sustitución del factor VIII.</p>
+                                    <p><span class="highlight">Referencia:</span> WHO (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://medlineplus.gov/spanish/ency/article/002051.htm#:~:text=Las%20enfermedades%20recesivas%20ligadas%20al,genes%20XY%20en%20el%20hombre.</p>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Dominante ligada a X</span>
+                                <div class="details">
+                                    <p>El gen alterado se encuentra en el cromosoma X y una sola copia es suficiente para expresar la enfermedad.</p>
+                                    <p><span class="highlight">Definición:</span> Mutación dominante en el cromosoma X.</p>
+                                    <p><span class="highlight">Afecta a:</span> Ambos sexos (más grave en hombres).</p>
+                                    <p><span class="highlight">Ejemplo:</span> Síndrome de Rett.</p>
+                                    <p><span class="highlight">Síntomas:</span> Pérdida del habla, movimientos repetitivos.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias físicas y neurológicas.</p>
+                                    <p><span class="highlight">Referencia:</span> NCBI (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://medlineplus.gov/spanish/ency/article/002050.htm#:~:text=El%20dominante%20ligado%20al%20sexo,Autos%C3%B3mico%20dominante</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="subcategory">
+                        <h3><i class="fas fa-exclamation-circle"></i> Herencia No Mendeliana</h3>
+                        <ul class="item-list">
+                            <li class="expandable">
+                                <span class="expandable-title">Mitocondrial</span>
+                                <div class="details">
+                                    <p>Transmitida exclusivamente por la madre a través del ADN mitocondrial.</p>
+                                    <p><span class="highlight">Definición:</span> Mutación en el ADN mitocondrial, heredado solo por la madre.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Neuropatía óptica de Leber.</p>
+                                    <p><span class="highlight">Síntomas:</span> Pérdida de visión, debilidad muscular.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Suplementos vitamínicos.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.genome.gov/es/genetics-glossary/Mitocondria#:~:text=Las%20mitocondrias%20son%20los%20org%C3%A1nulos,trifosfato%20de%20adenosina%20(ATP).</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Mosaicismo</span>
+                                <div class="details">
+                                    <p>Presencia de dos o más poblaciones de células con diferente constitución genética en un mismo individuo.</p>
+                                    <p><span class="highlight">Definición:</span> Presencia de dos o más líneas celulares con distinto material genética en un mismo individuo.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Síndrome de Turner mosaico.</p>
+                                    <p><span class="highlight">Síntomas:</span> Varian según proporción celular.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapia médica y hormonal.</p>
+                                    <p><span class="highlight">Referencia:</span> MedlinePlus (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://medlineplus.gov/spanish/ency/article/001317.htm</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Impronta genómica</span>
+                                <div class="details">
+                                    <p>Expresión diferencial de genes según su origen parental.</p>
+                                    <p><span class="highlight">Definición:</span> Expresión diferencial de un gen según provenga del padre o de la madre.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Síndrome de Prader-Willi o Angelman.</p>
+                                    <p><span class="highlight">Síntomas:</span> Obesidad, retraso mental o alteraciones neurológicas.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias multidisciplinarias.</p>
+                                    <p><span class="highlight">Referencia:</span> Genomics England (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.genome.gov/es/genetics-glossary/Impronta-genetica</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Disomía uniparental</span>
+                                <div class="details">
+                                    <p>Herencia de ambos cromosomas de un par de un solo progenitor.</p>
+                                    <p><span class="highlight">Definición:</span> Ambos cromosomas de un par provienen de un mismo progenitor.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Prader-Willi (materna) o Angelman (paterna).</p>
+                                    <p><span class="highlight">Síntomas:</span> Retraso del crecimiento, obesidad, retraso cognitivo.</p>
+                                    <p><span class="highlight">Tratamiento:</span> No curable; manejo sintomático.</p>
+                                    <p><span class="highlight">Referencia:</span> NCBI (2023).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www.institutoroche.es/recursos/glosario/Disom%C3%ADa+uniparental</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Expansión de tripletes</span>
+                                <div class="details">
+                                    <p>Enfermedades causadas por repeticiones anormales de secuencias de tres nucleótidos.</p>
+                                    <p><span class="highlight">Definición:</span> Repetición anormal de tres nucleótidos en un gen.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Huntington, síndrome X frágil.</p>
+                                    <p><span class="highlight">Síntomas:</span> Movimientos involuntarios, deterioro mental.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Terapias neurológicas.</p>
+                                    <p><span class="highlight">Referencia:</span> NIH (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://www-sciencedirect-com.translate.goog/topics/biochemistry-genetics-and-molecular-biology/trinucleotide-repeat-expansion?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=wa</p>
+                                </div>
+                            </li>
+                            <li class="expandable">
+                                <span class="expandable-title">Trialélica</span>
+                                <div class="details">
+                                    <p>Enfermedades que requieren mutaciones en tres alelos de dos genes diferentes.</p>
+                                    <p><span class="highlight">Definición:</span> Presencia de tres alelos de un gen debido a duplicación o herencia especial.</p>
+                                    <p><span class="highlight">Ejemplo:</span> Algunas formas de fibrosis quística.</p>
+                                    <p><span class="highlight">Síntomas:</span> Dependen del gen afectado.</p>
+                                    <p><span class="highlight">Tratamiento:</span> Control sintomático.</p>
+                                    <p><span class="highlight">Referencia:</span> MedlinePlus (2024).</p>
+                                    <p><span class="highlight">Link para mas informacion:</span> https://rarediseases.info.nih.gov/espanol/11858/sindrome-de-bardet-biedl</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <section class="image-gallery">
+            <h2 class="section-title"><i class="fas fa-images"></i> Imágenes de Referencia</h2>
+            <p>Visualizaciones que ayudan a comprender las alteraciones genéticas</p>
+            
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://www.childrensmn.org/educationmaterials/assets/img/geneticconditions_spanish1.jpg" alt="Estructura del ADN" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>Condiciones Genéticas</h3>
+                        <p>explica los conceptos básicos de las condiciones genéticas, mostrando la diferencia entre condiciones dominantes y recesivas. Esta representación visual ayuda a comprender cómo se heredan las características genéticas y qué factores influyen en la transmisión de enfermedades hereditarias de padres a hijos.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://i.blogs.es/526ef9/650_1000_captura_de_pantalla_2014-06-24_16.34.21/450_1000.png" alt="Cariotipo humano" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>Alteraciones Cromosómicas Estructurales</h3>
+                        <p>Diagrama detallado que ilustra los diferentes tipos de alteraciones cromosómicas estructurales, incluyendo deleciones, duplicaciones, inversiones y translocaciones.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Mutaci%C3%B3n_ADN.jpg" alt="Estructura cromosómica" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>Mutación del ADN: Alteración de la Secuencia Genética</h3>
+                        <p>Representación visual de una mutación en la estructura del ADN, donde se puede observar un cambio en la secuencia de nucleótidos. Las mutaciones son alteraciones permanentes en la secuencia del genoma que pueden ser heredadas o adquiridas, y son la base de muchas enfermedades genéticas y la diversidad evolutiva.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="video-section">
+            <h2 class="section-title"><i class="fas fa-video"></i> Videos Educativos sobre Genética</h2>
+            <p>Explora estos recursos visuales para comprender mejor las alteraciones genéticas</p>
+            
+            <div class="video-container">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/75-gTLcjEmU" title="Alteraciones Genéticas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Alteraciones Cromosómicas</h3>
+                        <p>Explicación visual de las diferentes alteraciones en la estructura y número de cromosomas.</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/MoG9cYQlBX8" title="Enfermedades Genéticas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Enfermedades Monogénicas</h3>
+                        <p>Análisis de las enfermedades hereditarias causadas por mutaciones en un solo gen.</p>
+                    </div>
+                </div>
+                
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/f1D6RV-7ntE" title="Asesoramiento Genético" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>Asesoramiento Genético</h3>
+                        <p>Importancia del consejo genético en la prevención y manejo de enfermedades hereditarias.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="floating-btn" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <h3>Alteraciones Genéticas - Recursos Educativos</h3>
+            <p>Información basada en fuentes científicas confiables para estudiantes y profesionales de la salud.</p>
+            
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-book"></i> Referencias</a>
+                <a href="#"><i class="fas fa-graduation-cap"></i> Recursos</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+            </div>
+            
+            <p>&copy; 2025 Alteraciones Genéticas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para expandir/contraer items
+            const expandables = document.querySelectorAll('.expandable');
+            
+            expandables.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('expanded');
+                    const details = this.querySelector('.details');
+                    
+                    if (details.style.display === 'block') {
+                        details.style.display = 'none';
+                    } else {
+                        details.style.display = 'block';
+                    }
+                });
+            });
+            
+            // Funcionalidad de búsqueda
+            const searchBox = document.querySelector('.search-box');
+            searchBox.addEventListener('keyup', function() {
+                const searchTerm = this.value.toLowerCase();
+                const items = document.querySelectorAll('.expandable');
+                
+                items.forEach(item => {
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        // Expandir si coincide con la búsqueda
+                        if (searchTerm.length > 0) {
+                            item.classList.add('expanded');
+                            item.querySelector('.details').style.display = 'block';
+                        }
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Expandir el primer item de cada categoría por defecto
+            document.querySelectorAll('.subcategory').forEach(category => {
+                const firstItem = category.querySelector('.expandable');
+                if (firstItem) {
+                    firstItem.classList.add('expanded');
+                    firstItem.querySelector('.details').style.display = 'block';
+                }
+            });
+            
+            // Botón flotante para ir al inicio
+            const scrollToTopBtn = document.getElementById('scrollToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopBtn.style.display = 'flex';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            });
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
